@@ -34,8 +34,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build frontend
+       - name: Build frontend
         run: npm run build
+        env:
+          VITE_API_URL: https://gem-bidding-compliance-engine-2.onrender.com
 
       - name: Inspect build output
         run: |
