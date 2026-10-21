@@ -37,6 +37,13 @@ jobs:
       - name: Build frontend
         run: npm run build
 
+      - name: Inspect build output
+        run: |
+          echo "=== Generated files ==="
+          find dist -maxdepth 3 -type f -print
+          echo "=== Generated HTML ==="
+          cat dist/index.html
+
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
